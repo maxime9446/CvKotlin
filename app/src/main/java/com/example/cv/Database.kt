@@ -6,9 +6,13 @@ data class CVData(
     val adresse: String,
     val numero: String,
     val email: String,
-    val competences: List<String>
+    val competences: List<Competence>
 )
 
+data class Competence(
+    val nom: String,
+    val pourcentage: Int
+)
 object Database {
     val cvInfo = CVData(
         nom = "BECKER",
@@ -16,6 +20,10 @@ object Database {
         adresse = "22 rue dans la République",
         numero = "0102030405",
         email = "becker.maxime@email.com",
-        competences = listOf("Kotlin", "Android", "Java")
+        competences = listOf(
+            Competence("Kotlin", 80),
+            Competence("Android", 70),
+            Competence("Java", 60)
+        )
     )
 }
